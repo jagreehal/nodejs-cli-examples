@@ -1,0 +1,21 @@
+{
+  "name": "cli-examples",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "dotenv -- turbo run dev --no-cache --parallel --continue",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "run:api": "turbo run dev --filter=api",
+    "run:cli": "turbo run start --filter=packages/todo-cli"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.14"
+  },
+  "packageManager": "pnpm@8.6.4",
+  "dependencies": {}
+}
